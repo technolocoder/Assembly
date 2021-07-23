@@ -3,3 +3,5 @@
 !run.sh
 !*/
 !*/*.s
+!README.md
+!readme.txt

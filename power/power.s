@@ -20,18 +20,20 @@ _start:
     # Exit Call
     movq $60 , %rax
     movq %rcx, %rdi
-
-    syscall
+    syscall 
 
 .type power,@function
 power: 
     pushq %rbp
     movq %rsp, %rbp
 
+    # Load the power param to rdi and the base to rax 
     movq 24(%rbp), %rdi
     movq 16(%rbp), %rax
+    # Copy rax (base) to rbx 
     movq %rax, %rbx 
 
+# Loop for the power calculation
 power_loop:
     cmpq $1, %rdi
     je power_exit
