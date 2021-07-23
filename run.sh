@@ -25,6 +25,7 @@ fi
 
 
 echo "Executing: ${1}"
-echo -n "Return Value: "
 ./${1}
-echo $?
+ret=$?
+echo -n "Return Value: "
+echo $ret
