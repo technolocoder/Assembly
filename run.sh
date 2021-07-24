@@ -2,6 +2,7 @@
 
 # Tested at x86-64
 
+# Error Checking 
 if [ -z $1 ]; then 
     echo "Error no argument passed!"
     exit 1
@@ -22,6 +23,15 @@ if [[ $? != 0 ]]; then
     echo "Linker Error!"
     exit 1
 fi
+
+
+# File Sizes
+echo -en "------------\nSource Size: "
+du -sb ${1}.s
+echo -n  "Object File Size: "
+du -sb ${1}.o
+echo -n  "Executable Size: "
+du -sb ${1}
 
 
 echo "Executing: ${1}"
