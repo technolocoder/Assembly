@@ -1,6 +1,7 @@
 .section .text
 .globl _start 
 
+.type factorial_func,@function
 factorial_func:
     pushq %rbp
     movq %rsp, %rbp

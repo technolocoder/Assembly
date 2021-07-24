@@ -2,7 +2,7 @@
 .globl _start
 
 _start:
-    movq $8, %rdi
+    movq $10, %rdi
     
     cmp $0, %rdi
     je base_case0 
