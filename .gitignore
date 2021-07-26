@@ -2,7 +2,7 @@
 !.gitignore
 !run.sh
 !*/
-!*/*.s
+!*/*/*.s
 !README.md
 !readme.txt
 !order.txt 
