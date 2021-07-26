@@ -9,3 +9,5 @@ order of examples (chronological)
 8.  fibonacci-func
 9.  test-input
 10. test-feedback
+11. strlen
+12. print-exec

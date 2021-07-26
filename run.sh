@@ -35,7 +35,7 @@ du -sb ${1}
 
 
 echo "Executing: ${1}"
-time -p ./${1}
+time ./${1}
 ret=$?
 echo -n "Return Value: "
 echo $ret

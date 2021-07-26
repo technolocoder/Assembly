@@ -1,11 +1,5 @@
-.section .data
-sample_str:
-.ascii "Hello\0"
-
-.section .text 
-.globl _start 
-
-.equ SYS_EXIT, 60
+.section .text
+.globl _start
 
 .type strlen,@function
 strlen:
@@ -23,10 +17,24 @@ loop_end:
     movq %rbp, %rsp
     popq %rbp
     ret
+
+.equ SYS_EXIT, 60
+.equ SYS_WRITE, 1
+.equ STDOUT, 1
 _start:
-    pushq $sample_str
+    movq %rsp, %rbp
+
+    movq 8(%rbp), %rsi
+    pushq %rsi
+    
     call strlen
-    movq %rax, %rdi
+    addq $8, %rsp
+
+    movq %rax, %rdx
+    movq $SYS_WRITE, %rax
+    movq $STDOUT, %rdi
+    syscall
 
     movq $SYS_EXIT, %rax
-    syscall 
+    movq $0, %rdi
+    syscall
